@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c915cde8c2687440590697e9e8980499
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Gang of Three
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9e32cc1928930410b932df1f215542e7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
