@@ -16,11 +16,11 @@ public class Fruit : MonoBehaviour {
 
     private void Slice(Vector3 direction, Vector3 position, float force) {
 
-        // disable the whole fruit
+        // disable whole fruit
         fruitCollider.enabled = false;
         whole.SetActive(false);
 
-        // enable the sliced fruit
+        // enable sliced fruit
         sliced.SetActive(true);
         juiceEffect.Play();
 
@@ -30,7 +30,7 @@ public class Fruit : MonoBehaviour {
 
         Rigidbody[] slices = sliced.GetComponentsInChildren<Rigidbody>();
 
-        // add a force to each slice based on the blade direction
+        // add force to each slice according to blade direction
         foreach (Rigidbody slice in slices) {
             slice.velocity = fruitRigidbody.velocity;
             slice.AddForceAtPosition(direction * force, position, ForceMode.Impulse);
