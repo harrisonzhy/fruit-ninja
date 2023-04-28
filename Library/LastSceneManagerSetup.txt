@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/FruitNinja.unity
+- path: Assets/fruit-ninja.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
