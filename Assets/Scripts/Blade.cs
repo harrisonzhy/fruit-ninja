@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class Blade : MonoBehaviour
-{
-    public Vector3 direction { get; private set; }
+public class Blade : MonoBehaviour {
+    public Vector3 direction { 
+      get; 
+      private set;
+    }
 
     private Camera mainCamera;
 
@@ -14,25 +16,21 @@ public class Blade : MonoBehaviour
 
     private bool slicing;
 
-    private void Awake()
-    {
+    private void Awake() {
         mainCamera = Camera.main;
         sliceCollider = GetComponent<Collider>();
         sliceTrail = GetComponentInChildren<TrailRenderer>();
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         StopSlice();
     }
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
         StopSlice();
     }
 
-    private void Update()
-    {
+    private void Update() {
         if (Input.GetMouseButtonDown(0)) {
             StartSlice();
         } else if (Input.GetMouseButtonUp(0)) {
@@ -42,8 +40,7 @@ public class Blade : MonoBehaviour
         }
     }
 
-    private void StartSlice()
-    {
+    private void StartSlice() {
         Vector3 position = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         position.z = 0f;
         transform.position = position;
@@ -54,15 +51,13 @@ public class Blade : MonoBehaviour
         sliceTrail.Clear();
     }
 
-    private void StopSlice()
-    {
+    private void StopSlice() {
         slicing = false;
         sliceCollider.enabled = false;
         sliceTrail.enabled = false;
     }
 
-    private void ContinueSlice()
-    {
+    private void ContinueSlice() {
         Vector3 newPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         newPosition.z = 0f;
 
@@ -73,5 +68,4 @@ public class Blade : MonoBehaviour
 
         transform.position = newPosition;
     }
-
 }

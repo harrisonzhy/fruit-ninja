@@ -16,12 +16,15 @@ public class Spawner : MonoBehaviour {
     private void Awake() {
         spawnArea = GetComponent<Collider>();
     }
+
     private void OnEnable() {
         StartCoroutine(Spawn());
     }
+
     private void OnDisable() {
         StopAllCoroutines();
     }
+
     private IEnumerator Spawn() {
         yield return new WaitForSeconds(2f);
         while (enabled) {
